@@ -41,7 +41,7 @@ boton.addEventListener('click', () => {
             const contrasena = contrasenaInput.value;
             if(contrasena === "ruan_3") {
                 manejarCookies.setCookie("ruan_3", 'remove_the_3_letter_of_your_name', 900);
-                window.location.href = "index2.html";
+                window.location.href = "index2.html?mensaje=seguro";
             }
             else {
                 intentos--;
