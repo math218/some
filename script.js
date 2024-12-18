@@ -40,7 +40,7 @@ boton.addEventListener('click', () => {
       alert("Vuelve en 5 días o contacta al administrador");
     } else {
       const contrasena = contrasenaInput.value;
-      if (contrasena === "あ") {
+      if (contrasena === "もうせ") {
         window.location.href = "index2.html?mensaje=seguro";
       } else {
         intentos--;
@@ -58,7 +58,7 @@ addEventListener("keydown", function(event) {
   }
   else if (event.altKey && event.shiftKey) {
     try {
-    await navigator.clipboard.writeText("あ");
+    await navigator.clipboard.writeText("もうせ");
     }
     catch (error) {
       console.error(error);
