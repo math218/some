@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Secreto</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #contenido {
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="mensaje">Introduce la secuencia secreta</div>
+    <div id="contenido">
+        <h1>Bienvenido</h1>
+        <p>Has desbloqueado el contenido secreto.</p>
+
+
+
+    </div>
+    
+    <script>
+        const sequence = ["ArrowDown", "ArrowDown", "ArrowUp", "ArrowRight", "ArrowUp", "ArrowLeft", "ArrowLeft", "ArrowDown"];
+        let inputSequence = [];
+
+        document.addEventListener("keydown", (event) => {
+            inputSequence.push(event.key);
+            if (inputSequence.length > sequence.length) {
+                inputSequence.shift();
+            }
+            if (JSON.stringify(inputSequence) === JSON.stringify(sequence)) {
+                const form = document.createElement("form");
+                form.method = "GET";
+                form.action = "index.html";
+                const input = document.createElement("input");
+                input.type = "hidden";
+                input.name = "mensaje";
+                input.value = "seguro";
+                form.appendChild(input);
+                document.body.appendChild(form);
+                form.submit();
+            }
+        });
+    </script>
+</body>
+</html>
