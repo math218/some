@@ -3,8 +3,8 @@
 <html>
     <script>
         const params = new URLSearchParams(window.location.search);
-        const mensaje = params.get("mensaje");
-        if (mensaje != "seguro") {
+        const mensaje = params.get("redirected");
+        if (mensaje != "true") {
             window.location.href= "index2.html";
         }
     </script>
