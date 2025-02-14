@@ -2,7 +2,14 @@
 <html lang="en">
 <html>
 <head>
+    <script>
+    params = new URLSearchParams(window.location.search);
 
+    algo = params.get("redirected");
+    if (algo != "true") {
+        window.location.href = "../index2.html";
+    }
+    </script>
     <meta name="google-adsense-account" content="ca-pub-1772815021916812">
 <meta charset="utf-8">
 <title>Select Game</title>
